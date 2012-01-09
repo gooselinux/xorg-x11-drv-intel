@@ -1,0 +1,16 @@
+diff -up xf86-video-intel-2.11.0/src/i965_render.c.dave xf86-video-intel-2.11.0/src/i965_render.c
+--- xf86-video-intel-2.11.0/src/i965_render.c.dave	2010-06-25 10:59:26.273591829 +1000
++++ xf86-video-intel-2.11.0/src/i965_render.c	2010-06-25 10:59:56.262841011 +1000
+@@ -1149,6 +1149,12 @@ static void i965_emit_composite_state(Sc
+ 	IntelEmitInvarientState(scrn);
+ 	intel->last_3d = LAST_3D_RENDER;
+ 
++	/* Mark the destination dirty within this batch */
++	intel_batch_mark_pixmap_domains(intel,
++					i830_get_pixmap_intel(dest),
++					I915_GEM_DOMAIN_RENDER,
++					I915_GEM_DOMAIN_RENDER);
++
+ 	urb_vs_start = 0;
+ 	urb_vs_size = URB_VS_ENTRIES * URB_VS_ENTRY_SIZE;
+ 	urb_gs_start = urb_vs_start + urb_vs_size;

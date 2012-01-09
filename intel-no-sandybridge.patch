@@ -1,0 +1,12 @@
+diff -up xf86-video-intel-2.11.0/src/i810_driver.c.jx xf86-video-intel-2.11.0/src/i810_driver.c
+--- xf86-video-intel-2.11.0/src/i810_driver.c.jx	2010-03-18 13:13:36.000000000 -0400
++++ xf86-video-intel-2.11.0/src/i810_driver.c	2010-08-13 17:16:52.000000000 -0400
+@@ -140,8 +140,6 @@ static const struct pci_id_match intel_d
+    INTEL_DEVICE_MATCH (PCI_CHIP_B43_G, 0 ),
+    INTEL_DEVICE_MATCH (PCI_CHIP_IGDNG_D_G, 0 ),
+    INTEL_DEVICE_MATCH (PCI_CHIP_IGDNG_M_G, 0 ),
+-   INTEL_DEVICE_MATCH (PCI_CHIP_SANDYBRIDGE, 0 ),
+-   INTEL_DEVICE_MATCH (PCI_CHIP_SANDYBRIDGE_M, 0 ),
+     { 0, 0, 0 },
+ };
+ 
